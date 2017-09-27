@@ -11,14 +11,20 @@ import java.util.regex.Pattern;
 
 public class Create {
 
+    //传入执行创建的语句
     public static void Create(String s) throws IOException {
         //表名
         String name = "";
         //存放所有属性和类型
         String attribute = "";
-        //正则解析属性
-        String reg = "(?<=\\().+(?=\\))";
 
+        /*
+        *  反向肯定预查： 匹配 （ .任意字符 +多个  匹配）
+        *  也就是匹配 左右括号 之间的任意东西
+        *  create table student (s_name char,id int)
+        *  取出上面语句的s_name char,id int
+        *  */
+        String reg = "(?<=\\().+(?=\\))";       //正则解析属性
 
         File file = new File("E:\\"+name+".txt");
         //每次添加到文件末尾而不是覆盖
@@ -49,6 +55,7 @@ public class Create {
             m.find();
             //返回包含的属性
             attribute = m.group().toString();
+            System.out.println(attribute);
 
             //存每一组属性和类型 e.g name char
             String []group = attribute.split(",");

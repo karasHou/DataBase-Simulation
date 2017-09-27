@@ -4,9 +4,18 @@ import java.io.InputStreamReader;
 
 /**
  *
- * 数据库主函数
- *
+ *  数据库主函数
+ *  数据字典的组成：
+     1、数据项
+     2、数据结构
+     3、数据流
+     4、数据存储
+     5、处理过程
+
  */
+
+
+
 public class DBMain {
 
     //创建
@@ -22,9 +31,9 @@ public class DBMain {
 
 
     /*
-    *
+    *   测试语句
     *   create table student (s_name char,id int)
-    *
+    *   insert into student (s_name,id) values('houwei','2015')
     *
     *
     *
@@ -49,8 +58,9 @@ public class DBMain {
 
         if(s.matches(sqlcreate)){
             Create.Create(s);
-        }
-        else{
+        }else if(s.matches(sqlinsert)){
+            Insert.Insert(s);
+        }else {
             System.out.println("输入的语句有错误");
         }
     }
