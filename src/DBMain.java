@@ -28,14 +28,15 @@ public class DBMain {
     String sqldelete = "delete from (\\w+) where .+";
     //显示数据库结构和内容
     String sqlselect = "select \\* from (\\w+)";
-
+    //删除
+    String sqldrop  ="drop table (\\w+)";
 
     /*
     *   测试语句
-    *   create table student (s_name char,id int)
-    *   insert into student (s_name,id) values('houwei','2015')
-    *
-    *
+    *   1.  create table student (s_name char,id int)
+    *   2.  insert into student (s_name,id) values('houwei','6386')
+    *       insert into student (s_name,id) values('zouhao','1006')
+    *   3.  drop table student
     *
     * */
 
@@ -58,8 +59,10 @@ public class DBMain {
 
         if(s.matches(sqlcreate)){
             Create.Create(s);
-        }else if(s.matches(sqlinsert)){
+        }else if(s.matches(sqlinsert)) {
             Insert.Insert(s);
+        }else if(s.matches(sqldrop)){
+            DeleteTable.DeleteTable(s);
         }else {
             System.out.println("输入的语句有错误");
         }

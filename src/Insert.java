@@ -45,6 +45,7 @@ public class Insert {
               //  System.out.println(attribute);
             }
 
+            System.out.println(attribute+"1");
 
             //分割出最后插入的数据 e.g houwei 2015
             String []result=attribute.split(",");
