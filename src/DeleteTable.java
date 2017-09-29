@@ -1,3 +1,10 @@
+/**
+ *
+ *  删除表：drop table student
+ *
+ *
+ */
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
