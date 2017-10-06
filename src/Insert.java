@@ -15,7 +15,7 @@ public class Insert {
     public static void Insert(String s) throws IOException {
 
         /*
-         *  测试语句：insert into student (s_name,id) values('houwei','2015')
+         *  测试语句：insert into student (name,id,grasw) values('houwei','2015','1')
          *
          */
         //提取（）中属性的值

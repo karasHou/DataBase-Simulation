@@ -30,17 +30,18 @@ public class DBMain {
     String sqlselect = "select \\* from (\\w+)";
     //删除
     String sqldrop  ="drop table (\\w+)";
-
+    //删除指定行
+    String sqldeleteLine="delete from (\\w+) where .+";
 
     /*
     *   测试语句
-    *   1.  create table student (s_name char,id int)
-    *   2.  insert into student (s_name,id) values('houwei','6386')
-    *       insert into student (s_name,id) values('zouhao','1006')
+    *   1.  create table student (name char,id int,grade int)
+    *   2.  insert into student (name,id,grade) values('houwei','6386','1')
+    *       insert into student (name,id,grade) values('zouhao','1006','1')
     *   3.  drop table student
     *   4.  select * from student
-    *   5.  delete from student2 where name=小红;
-    *
+    *   5.  delete from student where name=zouhao;
+    *   6.  update student set name=xiaohua,id=1234  where grade=1;
     * */
 
 
@@ -71,6 +72,10 @@ public class DBMain {
             DeleteTable.DeleteTable(s);
         }else if(s.matches(sqlselect)){
             SelectAll.SelectAll(s);
+        }else if(s.matches(sqlupdate)) {
+            Update.UpdateTable(s);
+        }else if(s.matches(sqldeleteLine)){
+            DeleteLine.DeleteLine(s);
         }
         else {
             System.out.println("输入的语句有错误");

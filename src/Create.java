@@ -65,7 +65,7 @@ public class Create {
             for(int i = 0;i<group.length;i++){
                 single = group[i].split(" ");
                 //e.g  name(char)
-                fileWriter.write(single[0]+"("+single[1]+")");
+                fileWriter.write(single[0]+"("+single[1]+") ");
                 //写入数据字典
                 data_dict.write("属性："+single[0]+"类型："+single[1]);
             }
