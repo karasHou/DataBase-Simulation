@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-abstract public class DeleteLine {
+public class DeleteLine {
 
     public static void DeleteLine(String s) throws IOException {
         String result="";

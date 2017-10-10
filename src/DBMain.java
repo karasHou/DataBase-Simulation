@@ -36,12 +36,13 @@ public class DBMain {
     /*
     *   测试语句
     *   1.  create table student (name char,id int,grade int)
-    *   2.  insert into student (name,id,grade) values('houwei','6386','1')
+    *   2.  insert into student (name,id,grade) values('houwei','6386','2')
     *       insert into student (name,id,grade) values('zouhao','1006','1')
+    *       insert into student (name,id,grade) values('malin','6388','1')
     *   3.  drop table student
     *   4.  select * from student
     *   5.  delete from student where name=zouhao;
-    *   6.  update student set name=xiaohua,id=1234  where grade=1;
+    *   6.  update student set id=6666,grade=1 where name=houwei;
     * */
 
 
