@@ -118,10 +118,6 @@ public class Update {
             //存第二个要修改的属性（含类型）
             String d = m2.group(3);
 
-
-
-
-
 //            System.out.println("111111111111111111111");
 //            System.out.println("a "+a);
 //            System.out.println("b "+b);
