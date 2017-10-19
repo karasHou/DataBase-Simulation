@@ -37,7 +37,7 @@ public class AlterDrop {
             String[] y =line.split(" ");
             for(int i=0;i<y.length;i++){
                 System.out.println("==================================");
-                System.out.println("y[i]"+y[i]+"=="+property+"("+property_type.charAt(0)+")");
+                System.out.println("y[i]"+y[i]+"=="+property+"("+property_type+")");
 
                 if(y[i].equals(property+"("+property_type+")")){
 //                if(y[i].equals(property+"("+property_type.charAt(0)+")")){

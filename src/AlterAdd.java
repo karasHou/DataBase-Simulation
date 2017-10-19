@@ -26,7 +26,7 @@ public class AlterAdd {
             property=m.group(2).toString();
             property_type=m.group(3).toString();
         }
-        System.out.println(table_name+"    "+property+"("+property_type.charAt(0)+")");
+        System.out.println(table_name+"    "+property+"("+property_type+")");
 
         File file = new File("E:\\"+table_name+".txt");
         if(file.exists()){
@@ -36,7 +36,7 @@ public class AlterAdd {
             line = br.readLine();
             String[] y =line.split(" ");
             for(int i=0;i<y.length;i++){
-                if(y[i].equals(property+"("+property_type.charAt(0)+")")){
+                if(y[i].equals(property+"("+property_type+")")){
                     System.out.println("该属性已经存在");
                     result+="\r\n"+line;
 
