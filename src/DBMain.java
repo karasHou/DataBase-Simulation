@@ -36,7 +36,8 @@ public class DBMain {
     String sqlalterA="alter table (\\w+) add (.+) (.+)";
     //删除属性
     String sqlalterD="alter table (\\w+) drop (.+) (.+)";
-
+    //建立索引
+    String sqlindexU="create index (.+) on (.+) (.+)";
     /*
     *   测试语句
     *   1.  create table student (name char,id int,grade int)
@@ -49,6 +50,8 @@ public class DBMain {
     *   6.  update student set id=6666,grade=1 where name=houwei;
     *   7.  alter table student add sex char
     *   8.  alter table student drop id int
+    *   9.  create index student_index on student name(char)
+    *  10.  create index student_index on student id(int)
     * */
 
 
@@ -154,6 +157,8 @@ public class DBMain {
             AlterAdd.AlterAdd(s);
         }else if(s.matches(sqlalterD)){
             AlterDrop.AlterDrop(s);
+        }else if(s.matches(sqlindexU)){
+            IndexTable.IndexKeyTable(s);
         }
         else {
             System.out.println("输入的语句有错误");
