@@ -174,7 +174,7 @@ public class DBMain {
         }else if(s.matches(sqlselecX)){
             SelectX.SelectX(s);
         }else if(s.matches(sqlselecT)){
-
+            SelectT.SelectT(s);
         }else if(s.matches(sqlselecXT)){
 
         }else if(s.matches(sqlselecL)){
