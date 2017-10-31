@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
 /**
  *
  *  数据库主函数
@@ -11,10 +10,7 @@ import java.io.InputStreamReader;
      3、数据流
      4、数据存储
      5、处理过程
-
  */
-
-
 
 public class DBMain {
 
@@ -38,12 +34,24 @@ public class DBMain {
     String sqlalterD="alter table (\\w+) drop (.+) (.+)";
     //建立索引
     String sqlindexU="create index (.+) on (.+) (.+)";
+    //投影
+    String sqlselecT="select (.+) from (\\w+)";
+    //选择
+    String sqlselecX="select \\* from (.+) where (.+) (.+) (.+)";
+    //选择和投影
+    String sqlselecXT="select (.+) from (.+) where (.+) (.+) (.+)";
+    //连接
+    String sqlselecL="select \\* from (.+) where (.+)";
+
+
+
+
     /*
     *   测试语句
     *   1.  create table student (name char,id int,grade int)
     *   2.  insert into student (name,id,grade) values('houwei','6386','2')
-    *       insert into student (name,id,grade) values('zouhao','1006','1')
-    *       insert into student (name,id,grade) values('malin','6388','1')
+    *       insert into student (name,id,grade) values('zouhao','1006','2')
+    *       insert into student (name,id,grade) values('hahaha','6388','1')
     *   3.  drop table student
     *   4.  select * from student
     *   5.  delete from student where name=zouhao;
@@ -52,6 +60,10 @@ public class DBMain {
     *   8.  alter table student drop id int
     *   9.  create index student_index on student name(char)
     *  10.  create index student_index on student id(int)
+    *  11.  select * from student where grade > '1' 选择
+    *  12.  select grade from student where ssn = ''
+    *
+    *
     * */
 
 
@@ -159,6 +171,14 @@ public class DBMain {
             AlterDrop.AlterDrop(s);
         }else if(s.matches(sqlindexU)){
             IndexTable.IndexKeyTable(s);
+        }else if(s.matches(sqlselecX)){
+            SelectX.SelectX(s);
+        }else if(s.matches(sqlselecT)){
+
+        }else if(s.matches(sqlselecXT)){
+
+        }else if(s.matches(sqlselecL)){
+
         }
         else {
             System.out.println("输入的语句有错误");
