@@ -62,8 +62,8 @@ public class DBMain {
     *  10.  create index student_index on student id(int)
     *  11.  select * from student where grade > '1' 选择
     *  12.  select grade from student where ssn = ''
-    *
-    *
+    *  13.  select name from student
+    *  14.  select name from student where grade = '2'
     * */
 
 
@@ -176,7 +176,7 @@ public class DBMain {
         }else if(s.matches(sqlselecT)){
             SelectT.SelectT(s);
         }else if(s.matches(sqlselecXT)){
-
+            SelectXT.SelectXT(s);
         }else if(s.matches(sqlselecL)){
 
         }
