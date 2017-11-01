@@ -49,9 +49,16 @@ public class DBMain {
     /*
     *   测试语句
     *   1.  create table student (name char,id int,grade int)
+    *       create table course (name char,id int,grade int)
+    *
     *   2.  insert into student (name,id,grade) values('houwei','6386','2')
     *       insert into student (name,id,grade) values('zouhao','1006','2')
     *       insert into student (name,id,grade) values('hahaha','6388','1')
+    *
+    *       insert into course (name,id,grade) values('DataBase','0001','2')
+    *       insert into course (name,id,grade) values('Math','0002','2')
+    *       insert into course (name,id,grade) values('Computer','0003','1')
+    *
     *   3.  drop table student
     *   4.  select * from student
     *   5.  delete from student where name=zouhao;
@@ -64,6 +71,7 @@ public class DBMain {
     *  12.  select grade from student where ssn = ''
     *  13.  select name from student
     *  14.  select name from student where grade = '2'
+    *  15.  select * from student,course where s.grade=c.grade
     * */
 
 
@@ -178,7 +186,7 @@ public class DBMain {
         }else if(s.matches(sqlselecXT)){
             SelectXT.SelectXT(s);
         }else if(s.matches(sqlselecL)){
-
+            SelectL.SelectL(s);
         }
         else {
             System.out.println("输入的语句有错误");
