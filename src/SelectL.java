@@ -27,10 +27,8 @@ public class SelectL {
             table_list=m.group(1).toString();
             connect_con=m.group(2).toString();
         }
-
         String[] x=table_list.split(",");//将表集合分开
         String[] y=connect_con.split(s_connect);//将关系分开
-
 
         //将表的路径信息加入到list链表中
         for(int i=0;i<x.length;i++){
@@ -57,7 +55,7 @@ public class SelectL {
         for(int i=0;i<attr1.length;i++){
             if((attr1[i].replaceAll("\\(.*?\\)","")).equals(y[0].substring(2,y[0].length()))){
                 weizhi1=i;
-                System.out.println("位置1:"+weizhi1);
+               // System.out.println("位置1:"+weizhi1);
             }
         }
         if(weizhi1 == -1){
@@ -69,7 +67,7 @@ public class SelectL {
         for(int i=0;i<attr2.length;i++){
             if((attr2[i].replaceAll("\\(.*?\\)","")).equals(y[1].substring(2,y[0].length()))){
                 weizhi2=i;
-                System.out.println("位置2:"+weizhi2);
+              //  System.out.println("位置2:"+weizhi2);
             }
         }
         if(weizhi2 == -1){
@@ -85,24 +83,18 @@ public class SelectL {
         while((line1 = bf1.readLine())!=null){
             s_line1 = line1.split(" ");
             while((line2 = bf2.readLine())!=null) {
-
                 s_line2 = line2.split(" ");
-
                 if(s_line1[weizhi1].equals(s_line2[weizhi2])){
                     result+= line1 + line2 +"\r\n";
 
                 }
 
             }
-
+            //回到文件指针的起始位置
             bf2 =new BufferedReader(new FileReader(list.get(1)));
             bf2.readLine();bf2.readLine();
-
         }
-
-
-
         System.out.println(result);
-
     }
+
 }

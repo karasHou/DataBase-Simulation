@@ -67,11 +67,13 @@ public class DBMain {
     *   8.  alter table student drop id int
     *   9.  create index student_index on student name(char)
     *  10.  create index student_index on student id(int)
-    *  11.  select * from student where grade > '1' 选择
-    *  12.  select grade from student where ssn = ''
-    *  13.  select name from student
-    *  14.  select name from student where grade = '2'
-    *  15.  select * from student,course where s.grade=c.grade
+    *
+    *  select语句：
+    *
+    *  11.  select * from student where grade > '1'                 选择
+    *  12.  select name from student                                投影
+    *  13.  select name from student where grade = '2'              选投
+    *  14.  select * from student,course where s.grade=c.grade      连接（多表）
     * */
 
 
