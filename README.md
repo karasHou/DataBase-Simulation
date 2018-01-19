@@ -8,10 +8,10 @@
 ## 关键技术
 1. 匹配sql语句
 >   //创建
-    String sqlcreate = "create table \\w+ \\(.+\\)";
-    //插入
-    String sqlinsert = "insert into (\\w+) \\((.+)\\) values\\((.+)\\)";
-    //修改
-    String sqlupdate = "update .+set .+(where .+)?";
-    //删除
-    String sqldelete = "delete from (\\w+) where .+";
+    String sqlcreate = "create table \\w+ \\(.+\\)";<br>
+    //插入<br>
+    String sqlinsert = "insert into (\\w+) \\((.+)\\) values\\((.+)\\)";<br>
+    //修改<br>
+    String sqlupdate = "update .+set .+(where .+)?";<br>
+    //删除<br>
+    String sqldelete = "delete from (\\w+) where .+";<br>
