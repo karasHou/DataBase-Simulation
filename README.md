@@ -9,14 +9,28 @@
 
 ## 关键技术
 1. 匹配sql语句
->   //创建<br>
-    String sqlcreate = "create table \\w+ \\(.+\\)";<br>
-    //插入<br>
-    String sqlinsert = "insert into (\\w+) \\((.+)\\) values\\((.+)\\)";<br>
-    //修改<br>
-    String sqlupdate = "update .+set .+(where .+)?";<br>
-    //删除<br>
-    String sqldelete = "delete from (\\w+) where .+";<br>
-    
+```javascript
+ //创建<br>
+String sqlcreate = "create table \\w+ \\(.+\\)";<br>
+//插入<br>
+String sqlinsert = "insert into (\\w+) \\((.+)\\) values\\((.+)\\)";<br>
+//修改<br>
+String sqlupdate = "update .+set .+(where .+)?";<br>
+//删除<br>
+String sqldelete = "delete from (\\w+) where .+";<br>
+```
 2.连接操作中的笛卡尔积：
->
+```javascript
+while((line1 = bf1.readLine())!=null){
+            s_line1 = line1.split(" ");
+            while((line2 = bf2.readLine())!=null) {
+                s_line2 = line2.split(" ");
+                if(s_line1[weizhi1].equals(s_line2[weizhi2])){
+                    result+= line1 + line2 +"\r\n";
+                }
+            }
+            //回到文件指针的起始位置
+            bf2 =new BufferedReader(new FileReader(list.get(1)));
+            bf2.readLine();bf2.readLine();
+        }
+```
